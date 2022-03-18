@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        *{margin: 0px; padding: 0px; box-sizing: border-box;}
+        body{
+            background: linear-gradient(45deg, rgb(111, 173, 224), rgb(85, 209, 85));
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        p{
+            font-size: 30px;
+        }
+        button{
+            position: absolute;
+            bottom: 230px;
+            padding: 2px;
+            font-size: 20px;
+            width: 100px;
+            /* height: 30px; */
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <p text></p>
+    <button id="btn" onclick="countdown()" value="Start">Start</button>
+    <script>
+        var btn = document.getElementById('btn');
+        function countdown(){
+            if(btn.value = 'start'){
+                setInterval(timerStart,100);
+            }
+        }
+        
+        function timerStart(){
+            var date = new Date();
+            var ms = date.getMilliseconds();
+            var sec = date.getSeconds();
+            var min = date.getMinutes();
+            var hrs = date.getHours();
+           
+            if(ms>59){
+                sec += 1;
+                ms = 0;  
+            }
+            if(sec>59){
+                min += 1;
+                sec =0;
+            }
+            if(min>59){
+                hrs += 1;
+                min = 0;
+            }
+            c= document.querySelector('p').innerText = ms +':'+ sec +':'+ min +':'+ hrs;
+        }
+    </script>
+</body>
+</html>

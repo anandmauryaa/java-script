@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=”UTF-8?>
+<title>jQuery Example</title>
+<script src=”https://code.jquery.com/jquery-1.12.4.min.js”></script>
+<!– For Online Test Example –>
+<style>
+p{
+padding: 15px;
+background:#ff00ff;
+}
+</style>
+<script type=”text/javascript”>
+$(document).ready(function(){
+$(“.b1”).click(function(){
+$(“p.normal”).hide();
+$(“p.fast”).hide(“fast”);
+$(“p.slow”).hide(“slow”);
+$(“p.vfast”).hide(50);// time in millisecond
+$(“p.vslow”).hide(2000);//time in millisecond
+});
+$(“.b2”).click(function(){
+$(“p.normal”).show();
+$(“p.fast”).show(“fast”);
+$(“p.slow”).show(“slow”);
+$(“p.fast”).show(50);// time in millisecond
+$(“p.vslow”).show(2000);//time in millisecond
+});
+});
+</script>
+</head>
+<body>
+<button type=”button” class=”b1?>Hide</button>
+<button type=”button” class=”b2?>Show</button>
+<p class=”vfast”>This paragraph will show/hide with very fast speed.</p>
+<p class=”normal”>This paragraph will show/hide with Normal speed.</p>
+<p class=”fast”>This paragraph will show/hide with fast speed.</p>
+<p class=”slow”>This paragraph will show/hide with slow speed.</p>
+<p class=”vslow”>This paragraph will show/hide with very slow speed.</p>
+</body>
+</html>

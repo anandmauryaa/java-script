@@ -1,0 +1,30 @@
+<html>
+<head>
+<script>
+  var i=0;
+  var imgageArray["a.jpg","b.jpg","c.jpg","d.jpg"];
+  
+   function nxt(){
+	  i++;
+	  if(i==4)
+	  i=0;
+	  img1.scr=imgArray[i];
+	  }
+   function(){
+	   i--;
+	   if(i==-1)
+	   i==3;
+	   img1.src=imgArray[i];
+	   }
+	  </script>
+	  </head>
+	  <body>
+	  <center>
+	  <input type="button"value="<"onclick="prev()"/>
+	  <img src="b.jpg"height="100"width="100"name="img1"
+	  id="img1"/>
+	  <input type="button"value=">"onclick="nxt"/>
+	  </center>
+	  </body>
+	  </html>
+	  

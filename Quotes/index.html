@@ -1,0 +1,116 @@
+<html>
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@1,700&family=Cabin+Sketch&display=swap"
+          rel="stylesheet">
+     <title>Document</title>
+     <style>
+          *{
+               margin: 0; padding: 0; box-sizing: border-box;
+          }
+          .mainBox{
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               min-height: 100vh;
+               text-align: center;
+               font-family: 'Anonymous Pro', monospace;
+               font-family: 'Cabin Sketch', cursive;
+          }
+          .contentBox{
+               height: 50vh;
+               width: 40vw;
+               border: 1px solid #635f5f;
+               padding: 20px 30px;
+               background-color: #13bbd1;
+          }
+          .btnBox{
+               margin: 20px 0px;
+          }
+          #createNewBtn{
+               padding: 10px 15px;
+               background-color: #ddebf5;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+               color: #1d748f;
+               font-size: 1.5rem;
+          }
+          #createNewBtn:hover{
+               background-color: #fff;
+               color: #1d498f;
+          }
+          span{
+               color: whitesmoke;
+               letter-spacing: 1px;
+          }
+          h3::before{
+               content: open-quote;
+          }
+     </style>
+</head>
+<body>
+     <div class="mainBox">
+          <div class="contentBox">
+               <div class="btnBox">
+                    <button type="button" id="createNewBtn">Create Quote</button>
+               </div>
+               <div class="quoteBox">
+                    <h3 id="quotePara"><h3>
+                         
+               </div>
+          </div>
+     </div>
+</body>
+<script>
+     let count = "0"; 
+     const url = "https://type.fit/api/quotes";
+     let quotePara = document.getElementById('quotePara');
+     let createNewBtn = document.getElementById('createNewBtn');
+
+
+     //here fetching data from api
+     
+     let getQuotes = ()=>{
+          fetch(url).then((response) =>
+          {
+               return response.json();
+          }).then((data) =>
+          {
+               if(data[count].author === null){
+                    data[count].author="Author Name"
+               }else
+               quotePara.innerHTML= `${data[count].text} <br/><br/> <span> ${data[count].author} </span>`;
+               
+          })        
+     }
+
+     
+          //btn click event section define
+
+          createNewBtn.addEventListener("click", getQuotesBtn = () =>
+          {
+               count++;
+               getQuotes();
+          })
+
+     
+     getQuotesBtn();
+     
+     
+     // fetch(url).then(function (response)
+     //           {
+     //                return response.json();
+     //           })
+     //           .then(function (data)
+     //           {
+     //                console.log(data);
+     //           });
+
+     
+</script>
+</html>

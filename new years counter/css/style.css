@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(4A5.gif);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+h2 {  
+  font-size: 4rem;
+}
+.time_counter {
+  display: flex;
+}
+
+.commonDiv {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.big_text {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(15, 15, 19, 0.246);
+}
+span {
+  padding: 3px 7px;
+}
