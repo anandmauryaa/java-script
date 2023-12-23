@@ -1,5 +1,5 @@
 console.log("hello word !")
-const newYear = '1 jan 2022';
+const newYear = '1 jan '+(new Date().getFullYear()+1);
 
 let counter = () =>
 {
